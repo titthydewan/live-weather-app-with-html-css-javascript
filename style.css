@@ -1,0 +1,170 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EFF2EF;
+}
+.card {
+    height: 80%;
+    width: 90%;
+    background: linear-gradient(123deg, rgb(30, 38, 250) 0%, rgb(235, 89, 248) 69%);
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+.weather_status {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+.weather_status::before {
+    content: "";
+    position: absolute;
+    top:50%;
+    left: 50%;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background: linear-gradient(67deg, rgba(106,80,255,1) 0%, rgba(0,203,251,1) 69%);
+    transform: translate(-50%, -50%);
+}
+.weather_status .fas {
+    font-size: 5rem;
+    animation: scale 2s linear infinite;
+    animation-direction: alternate;
+}
+@keyframes scale {
+    0%{
+        transform: translateZ(0px) scale(0.8);
+    }
+    100%{
+        transform: translateZ(75px) scale(1.2);
+    }
+}
+.weather_data{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+.wave{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    height: 600px;
+    width: 600px;
+    background: linear-gradient(0deg, rgba(189,255,249,1) 0%, rgba(255,255,255,1) 69%);
+    border-radius: 40%;
+    animation: rotate 5s linear infinite;
+    opacity: 0.6;
+}
+@keyframes rotate {
+    from{
+        transform: translate(-50%) rotate(0deg);
+    }
+    to{
+        transform:translate(-50%) rotate(360deg);
+    }
+}
+.wave::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    height: 600px;
+    width: 600px;
+    border-radius: 40%;
+    background: linear-gradient(0deg, rgba(189,255,249,1) 0%, rgba(255,255,255,1) 69%);
+    opacity: 0.6;
+    animation: rotate 5s linear infinite;
+    transform: translate(-50%);
+}
+.wave::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    height: 600px;
+    width: 600px;
+    border-radius: 40%;
+    background: linear-gradient(0deg, rgba(189,255,249,1) 0%, rgba(255,255,255,1) 69%);
+    opacity: 0.6;
+    animation: rotate 5s linear 2s infinite;
+    transform: translate(-50%);
+}
+.weather_details {
+    transform: translateZ(75px);
+}
+.weather_details .city_name{
+    font-size: 30px;
+    font-weight: 500;
+    padding: 10px;
+    text-transform: capitalize;
+}
+.weather_details .cur_temp{
+    font-size: 40px;
+    font-weight: 900;
+    padding: 0 0 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px;
+}
+.weather_details p {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px;
+    text-transform: capitalize;
+}
+.weather_details .min_max_data {
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px;
+}
+#min {
+    color: rgb(7, 199, 7);
+}
+#max {
+    color: rgb(248, 245, 39);
+}
+@media only screen and (min-width: 420px){
+    .card {
+    height: 80%;
+    width: 70%;
+    }
+}
+@media only screen and (min-width: 600px){
+    .card {
+    height: 80%;
+    width: 60%;
+    }
+}
+@media only screen and (min-width: 830px){
+    .card {
+    height: 80%;
+    width: 30%;
+    }
+}

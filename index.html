@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/cloud-sun-solid.svg" type="image/x-icon">
+    <title>Weather</title>
+</head>
+
+<body>
+    <section class="card">
+        <div class="weather_status">
+        </div>
+        <div class="weather_data" data-tilt>
+            <div class="wave"></div>
+            <div class="weather_details">
+                <h1 class="city_name"></h1>
+                <h1 class="cur_temp"></h1>
+                <p class="min_max_data"></p>
+                <p id="date_data"></p>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="./javascript/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".card, .weather_status"), {
+            max: 25,
+            speed: 200,
+            gyroscope: true, // Boolean to enable/disable device orientation detection,
+            gyroscopeMinAngleX: -45, // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+            gyroscopeMaxAngleX: 45, // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+            gyroscopeMinAngleY: -45, // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+            gyroscopeMaxAngleY: 45,
+        });
+    </script>
+    <script src="./javascript/index.js"></script>
+</body>
+
+</html>
